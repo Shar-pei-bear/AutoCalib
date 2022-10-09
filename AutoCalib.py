@@ -250,11 +250,6 @@ class AutoCalib:
         return error
 
     def un_distort(self, images, visualize=False):
-        ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(self.obj_points, self.img_points, self.image_size, None, None)
-        print(ret)
-        print(mtx)
-        print(dist)
-
         for i, frame_name in enumerate(images):
             img = cv.imread(frame_name)
 
