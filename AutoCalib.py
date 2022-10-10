@@ -142,7 +142,7 @@ class AutoCalib:
         self.cx = -b13/b11 + (self.image_size[0] - 1)*0.5
         self.cy = -b23/b22 + (self.image_size[1] - 1)*0.5
 
-        scale = b33 - b23*b23/b22 + b13*b13/b11
+        scale = b33 - b23*b23/b22 - b13*b13/b11
 
         self.fx = np.sqrt(scale/b11)
         self.fy = np.sqrt(scale/b22)
